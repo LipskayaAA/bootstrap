@@ -13,11 +13,11 @@
 <form th:method="post" th:action="@{/admin}" th:object="${user}">
     <input type="hidden" th:field="*{id}" id="id" th:value="${user.getId()}" readonly>
     <input type="text" th:value="${user.getId()}" disabled>
-    <input type="text" th:field="*{firstName}" th:value="${user.getFirstName()}" placeholder="Имя" id="name" required>
-    <input type="text" th:field="*{lastName}" th:value="${user.getLastName()}" placeholder="Фамилия" id="lastName" required>
-    <input type="number" th:field="*{age}" th:value="${user.getAge()}" placeholder="Возраст" id="age" required>
-    <input type="text" th:field="*{email}" th:value="${user.getEmail()}" placeholder="Email" id="email" required>
-    <input type="password" th:field="*{password}" placeholder="Пароль" id="password">
+    <input type="text" th:field="*{firstName}" th:value="${user.getFirstName()}" placeholder="Имя" id="name" maxlength="45" required>
+    <input type="text" th:field="*{lastName}" th:value="${user.getLastName()}" placeholder="Фамилия" id="lastName" maxlength="45" required>
+    <input type="number" th:field="*{age}" th:value="${user.getAge()}" placeholder="Возраст" id="age" max="110" min="0" required>
+    <input type="text" th:field="*{email}" th:value="${user.getEmail()}" placeholder="Email" id="email" maxlength="45" required>
+    <input type="password" th:field="*{password}" placeholder="Пароль" id="password" maxlength="45">
     <select name="roleNewUser">
         <option value="" selected hidden>Выберите роль</option>
         <option th:text="${roles.get(0).getName()}" th:value="${roles.get(0).getName()}"></option>

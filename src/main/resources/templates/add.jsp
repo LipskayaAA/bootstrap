@@ -11,11 +11,11 @@
 <body>
 <div th:replace="logout :: logout"></div>
 <form th:method="post" th:action="@{/admin}" th:object="${user}">
-    <input type="text" th:field="*{firstName}" placeholder="Имя" id="name" required>
-    <input type="text" th:field="*{lastName}" placeholder="Фамилия" id="lastName" required>
-    <input type="number" th:field="*{age}" placeholder="Возраст" id="age" required>
-    <input type="text" th:field="*{email}" placeholder="Email" id="email" required>
-    <input type="password" th:field="*{password}" placeholder="Пароль" id="password" required>
+    <input type="text" th:field="*{firstName}" placeholder="Имя" id="name" maxlength="45" required>
+    <input type="text" th:field="*{lastName}" placeholder="Фамилия" id="lastName" maxlength="45" required>
+    <input type="number" th:field="*{age}" placeholder="Возраст" id="age" max="110" min="0" required>
+    <input type="text" th:field="*{email}" placeholder="Email" id="email" maxlength="45" required>
+    <input type="password" th:field="*{password}" placeholder="Пароль" id="password" maxlength="45" required>
     <select name="roleNewUser">
         <option th:text="${roles.get(0).getName()}" th:value="${roles.get(0).getName()}"></option>
         <option th:text="${roles.get(1).getName()}" th:value="${roles.get(1).getName()}"></option>
