@@ -25,6 +25,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public void saveUser(User user) {
+        System.out.println(user);
         if (user.getId() == null) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             for (Role r: user.getRoles()) {
